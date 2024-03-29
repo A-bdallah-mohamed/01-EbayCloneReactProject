@@ -1,14 +1,15 @@
 import React, { Children, createContext,useContext,useEffect, useState } from 'react';
 import { Productsprovider } from './components/productsprovider';
-import Search from './components/search';
-
+import Header from './components/header';
+import './App.css' 
 function App() {
  
   return (
     <Productsprovider>
-      <div>
-        <h1>Hello to my ebay clone</h1>
-        <Search />
+      <div className='container'>
+        <div className='contentwidth'>
+        <Header />
+        </div>
       </div>
     </Productsprovider>
   );
