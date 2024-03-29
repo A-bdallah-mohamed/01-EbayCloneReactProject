@@ -4,13 +4,104 @@
   align-items: center;
   justify-content: center;
 }
+.border{
+  position: absolute;
+  top: 25px;
+  height: 73px;
+  border-top: 0.1px solid rgb(216, 216, 216);
+  border-bottom: 0.1px solid rgb(216, 216, 216);
+  width: 100%;
+  left: 0;
+  pointer-events: none;
+}
 .contentwidth{
+  padding-left: 15px;
+  padding-right: 15px;
+  z-index: 1;
   width: 1360px;
-  overflow: hidden;
+overflow: hidden;
+}
+span{
+  color: rgb(0, 0, 187);
+  text-decoration: underline;
+  cursor: pointer;
 }
 .loginbar{
   height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+.flexconetnt{
+  display: flex;
+  gap: 20px;
+}
+.smallfont{
+  font-size: 12px;
+}
+
 .searchbar{
   height: 75px;
+  width: 1360px;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  gap: 20px;
+}
+.logo{
+  width: auto;
+  height: auto;
+  max-width: 150px;
+}
+.shopbycaate{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+}
+.shopbycaate:hover{
+  color: rgb(108, 0, 203);
+}
+.input{
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 730px;
+  border: 2px solid black;
+}
+.searchicon{
+  position: absolute;
+  left: 20px;
+}
+.realinput{
+  width: 630px;
+  height: 40px;
+  border: none;
+}
+.realinput:focus{
+  outline: none;
+}
+.searchbutton{
+  height: 45px;
+  background-color: rgb(56, 56, 255);
+  width: 200px;
+  color: white;
+cursor: pointer;
+}
+.searchbutton:hover{
+  background-color: rgb(93, 93, 255);
+}
+.categorybar{
+  display: flex;
+  font-size: 14px;
+  gap: 35px;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+}
+.mainbanner{
+  background-color: rgb(234, 234, 234);
+  height: 400px;
 }
