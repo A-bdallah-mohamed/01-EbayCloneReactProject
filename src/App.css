@@ -1,3 +1,8 @@
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
 .container{
   width: 100%;
   display: flex;
@@ -34,6 +39,8 @@ span{
 }
 .flexconetnt{
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 20px;
 }
 .smallfont{
@@ -61,7 +68,7 @@ span{
 
 }
 .shopbycaate:hover{
-  color: rgb(108, 0, 203);
+  color: rgb(56, 56, 255);
 }
 .input{
   display: flex;
@@ -89,9 +96,10 @@ span{
   width: 200px;
   color: white;
 cursor: pointer;
+border: none;
 }
 .searchbutton:hover{
-  background-color: rgb(93, 93, 255);
+  background-color: rgb(91, 91, 255);
 }
 .categorybar{
   display: flex;
@@ -104,4 +112,45 @@ cursor: pointer;
 .mainbanner{
   background-color: rgb(234, 234, 234);
   height: 400px;
+}
+.categoryncategorybar:hover{
+color: rgb(56, 56, 255);
+cursor: pointer;
+text-decoration: underline;
+}
+.todaysdeals{
+  overflow-x: auto; 
+  white-space: nowrap; 
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+margin-bottom: 10px;
+gap: 20px;
+position: relative;
+}
+.maindealcontainer{
+  width: auto;
+}
+.maindeal{
+width: 300px;
+  height: 270px;
+background-color: rgb(35, 35, 35);
+  border-radius: 20px;
+  flex-shrink: 0;
+  padding: 30px;
+}
+.todaysdeals::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.todaysdeals::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.todaysdeals::-webkit-scrollbar-thumb {
+  background: #888;
+}
+.todaysdeals::-webkit-scrollbar-thumb:hover {
+  background: #555;
+    cursor: grab; 
 }

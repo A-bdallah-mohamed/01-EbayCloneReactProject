@@ -7,7 +7,7 @@ export default function Categorybar() {
   return (
     <div className='categorybar'>
     {firstTenCategories.map(category => (
-        <div key={category}>{category}</div>
+        <div key={category} className='categoryncategorybar'>{category}</div>
       ))}
     </div>
   )
