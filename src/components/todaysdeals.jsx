@@ -6,17 +6,17 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 export default function Todaysdeals() {
     const {products} = useProductscontext();
-    const topeightproducts = products.slice(0,8)
+    const topeightproducts = products.slice(0,9)
     console.log(topeightproducts)
   return (
     <>
 
-    <div className='absolute translate-y-[500%] translate-x-[10px] z-50 w-[40px] h-[40px] bg-white rounded-full   hover:bg-opacity-40 flex items-center justify-center text-black cursor-pointer text-3xl transition-all active:translate-y-1'><RiArrowLeftSLine /></div>
-<div className='todaysdeals mt-[40px] relative'>
+<div className='todaysdeals'>
    
   
+<div className='arrow-left'><RiArrowLeftSLine /></div>
 
-<div className='maindealcontainer'>
+<div className='maindealcontainer left-0'>
 <div className='maindeal'>
 <div className='text-white text-3xl font-semibold'>Today's Deals</div>
 <div className='text-white text-md pt-[10px] font-semibold'>All With Free Shipping</div>
@@ -38,9 +38,9 @@ export default function Todaysdeals() {
   </div>
 ))}
 
+<div className='arrow-right'><MdOutlineKeyboardArrowRight /></div>
 
 </div>
-<div className='absolute translate-y-[-530%]  translate-x-[1280px] z-50 w-[40px] h-[40px] bg-white rounded-full mr-2  hover:bg-opacity-40 flex items-center justify-center text-black cursor-pointer text-3xl transition-all active:translate-y-1'><MdOutlineKeyboardArrowRight /></div>
 
 </>
   )

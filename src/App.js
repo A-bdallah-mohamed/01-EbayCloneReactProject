@@ -5,6 +5,7 @@ import Mainbanner from './components/mainbanner';
 import './App.css' 
 import Explore from './components/explore';
 import Todaysdeals from './components/todaysdeals';
+import Luxdeals from './components/luxdeals';
 function App() {
  
   return (
@@ -15,9 +16,7 @@ function App() {
         <Mainbanner />
         <Explore />
         <Todaysdeals   />
-        <Mainbanner />
-        <Mainbanner />
-        <Mainbanner />
+        <Luxdeals />
         </div>
       </div>
     </Productsprovider>

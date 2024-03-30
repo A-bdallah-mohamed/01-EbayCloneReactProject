@@ -6,7 +6,7 @@ export const Productsprovider = ({children}) => {
 
   const [products, setProducts] = useState([]);
   const [total,settotal] = useState(0)
-
+const [luxproduct,setluxproduct] = useState([]);
   useEffect(() => {
     async function fetchData() {
 
@@ -20,15 +20,17 @@ try {
  
           setProducts(data.products)
           settotal(data.total)
+          setluxproduct(products[80])
       } catch (error){
         console.log('Error fetching products:', error)
       }
     }
     fetchData();
+ 
   }, []);
 
   return (
-    <productscontext.Provider value={{products}}>
+    <productscontext.Provider value={{products , luxproduct}}>
     {children}
    </productscontext.Provider>
   );
