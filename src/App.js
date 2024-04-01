@@ -6,6 +6,7 @@ import './App.css'
 import Explore from './components/explore';
 import Todaysdeals from './components/todaysdeals';
 import Luxdeals from './components/luxdeals';
+import Footer from './components/footer';
 function App() {
  
   return (
@@ -17,8 +18,14 @@ function App() {
         <Explore />
         <Todaysdeals   />
         <Luxdeals />
+      
+  
         </div>
+      
       </div>
+      <div className='h-[400px] bg-gray-100 w-[full] border-t-2 border-gray-400 flex items-center justify-center '>
+        <Footer />
+</div>
     </Productsprovider>
   );
 }
