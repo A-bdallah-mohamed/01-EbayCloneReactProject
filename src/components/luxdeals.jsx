@@ -6,7 +6,7 @@ export default function Luxdeals() {
   const luxproduct = products[80]
   useEffect(()=> {
 
-    console.log(luxproduct)
+
   },[luxproduct])
 
     return (
