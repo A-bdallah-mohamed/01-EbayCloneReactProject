@@ -29,7 +29,7 @@ export default function Todaysdeals() {
 <div className='todaysdeals' ref={scrolldiv}>
    
   
-<div className='arrow-left' onClick={scrollleft}><RiArrowLeftSLine /></div>
+<button className='arrow-left' onClick={scrollleft}><RiArrowLeftSLine /></button>
 
 <div className='maindealcontainer left-0'>
 <div className='maindeal'>
@@ -53,7 +53,7 @@ export default function Todaysdeals() {
   </div>
 ))}
 
-<div className='arrow-right' onClick={scrollright}><MdOutlineKeyboardArrowRight /></div>
+<button className='arrow-right' onClick={scrollright}><MdOutlineKeyboardArrowRight /></button>
 
 </div>
 

@@ -24,7 +24,7 @@ export default function Luxdeals() {
       
       
 <div>
-    <div className='flex justify-center flex-col items-center'><p className='text-[100px] font-bold'>-15%*</p><p className='text-[40px] font-bold'>LUXDEALS15</p></div>
+    <div className='flex justify-center flex-col items-center'><div className='text-[100px] font-bold'>-15%*</div><div className='text-[40px] font-bold'>LUXDEALS15</div></div>
     <div className='ml-[30px] mt-[35px] text-xl font-semibold'>Epay money back <br /> Guarantee</div>
 </div>
     </div>

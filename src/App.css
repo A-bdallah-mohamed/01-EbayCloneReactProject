@@ -109,6 +109,9 @@ border: none;
   justify-content: center;
   height: 35px;
 }
+p:hover{
+  text-decoration: underline;
+}
 .mainbanner{
   background-color: rgb(234, 234, 234);
   height: 400px;

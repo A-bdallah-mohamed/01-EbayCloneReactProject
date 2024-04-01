@@ -33,7 +33,7 @@ const [activePanelIndex, setActivePanelIndex] = useState(0);
     const skincare = products.filter(product => product.category === "skincare")
     setskincarethree(skincare.slice(0,3))
 
-    console.log(womensjwelrythree , mensshirtthree ,menshoesthree , skincarethree)
+    console.log(womensjwelry , mensshirt ,menshoes , skincare)
 
     }
   },[products])
@@ -171,7 +171,7 @@ const handlePrev = () => {
 };
   return (
     <div className='mainbanner'>
-<div  onClick={()=> handlePrev()} className='absolute left-[5px] top-[50%] w-[35px] h-[35px] rounded-full bg-white flex items-center justify-center text-3xl drop-shadow-xl cursor-pointer active:translate-y-2 transition-all'><RiArrowLeftSLine /></div>
+<button  onClick={()=> handlePrev()} className='absolute left-[5px] top-[50%] w-[35px] h-[35px] rounded-full bg-white flex items-center justify-center text-3xl drop-shadow-xl cursor-pointer active:translate-y-2 transition-all'><RiArrowLeftSLine /></button>
 <div className='absolute flex items-center justify-center left-[44%] gap-[10px] top-[90%] drop-shadow-xl'>
 {panels.map((pnl,indx) => 
   <div key={indx} className='w-[30px] h-[30px] rounded-full bg-white flex items-center justify-center'>
@@ -182,7 +182,7 @@ const handlePrev = () => {
 
 {panels.length > 0 && panels[activePanelIndex]}
 
-<div onClick={()=> handleNext()} className='absolute right-[5px] top-[50%] w-[35px] h-[35px] rounded-full bg-white flex items-center justify-center text-3xl drop-shadow-xl cursor-pointer active:translate-y-2 transition-all'><MdOutlineKeyboardArrowRight /></div>
+<button onClick={()=> handleNext()} className='absolute right-[5px] top-[50%] w-[35px] h-[35px] rounded-full bg-white flex items-center justify-center text-3xl drop-shadow-xl cursor-pointer active:translate-y-2 transition-all'><MdOutlineKeyboardArrowRight /></button>
     </div>
   )
 }

@@ -4,7 +4,7 @@ import { IoLogoTwitter } from "react-icons/io5";
 
 export default function Footer() {
   return (
-    <div className='w-[1360px] h-full grid grid-cols-5 px-[150px] py-[40px]'>
+    <div className='w-[1360px] h-full grid grid-cols-5 px-[150px] py-[40px] gap-[65px] '>
 <div className='flex flex-col text-gray-500 text-sm gap-[5px]'>
     <p className='font-bold text-black'>Buy</p>
     <p className=''>Registration</p>
