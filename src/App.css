@@ -4,10 +4,11 @@
 @import "tailwindcss/utilities";
 
 .container{
-  width: 100%;
+  width: 200%;
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 .border{
   position: absolute;
@@ -23,7 +24,7 @@
   padding-left: 15px;
   padding-right: 15px;
   z-index: 1;
-  width: 1360px;
+  width: 1200px;
 overflow: hidden;
 }
 span{
@@ -34,6 +35,7 @@ span{
 .loginbar{
   height: 25px;
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
 }
@@ -80,7 +82,7 @@ span{
 }
 .searchicon{
   position: absolute;
-  left: 20px;
+  left: 10px;
 }
 .realinput{
   width: 630px;
@@ -104,13 +106,14 @@ border: none;
 .categorybar{
   display: flex;
   font-size: 14px;
-  gap: 35px;
+
   align-items: center;
   justify-content: center;
   height: 35px;
 }
 p:hover{
   text-decoration: underline;
+  cursor: pointer;
 }
 .mainbanner{
   background-color: rgb(234, 234, 234);

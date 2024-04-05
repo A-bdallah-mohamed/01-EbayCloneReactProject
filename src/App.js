@@ -1,31 +1,22 @@
-import React, { Children, createContext,useContext,useEffect, useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, HashRouter } from 'react-router-dom';
+import Homepage from './pages/homepage';
 import { Productsprovider } from './components/productsprovider';
-import Header from './components/header';
-import Mainbanner from './components/mainbanner';
-import './App.css' 
-import Explore from './components/explore';
-import Todaysdeals from './components/todaysdeals';
-import Luxdeals from './components/luxdeals';
-import Footer from './components/footer';
+import Categorypage from './pages/categorypage';
+import Cartpage from './pages/cartpage';
+import './App.css';
+
 function App() {
- 
   return (
+    
     <Productsprovider>
-      <div className='w-full flex items-center justify-center'>
-        <div className='contentwidth'>
-        <Header />
-        <Mainbanner />
-        <Explore />
-        <Todaysdeals   />
-        <Luxdeals />
-      
-  
-        </div>
-      
-      </div>
-      <div className='h-[400px] bg-gray-100 w-[full] border-t-2 border-gray-400 flex items-center justify-center '>
-        <Footer />
-</div>
+      <Router>
+        <Routes>
+          <Route path="/" exact element={<Homepage />} />
+          <Route path="/pages/categorypage" element={<Categorypage />} />
+          <Route path="/pages/cartpage" element={<Cartpage />} />
+        </Routes>
+      </Router>
     </Productsprovider>
   );
 }

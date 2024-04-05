@@ -3,7 +3,7 @@ import { useProductscontext } from './productsprovider'
 import whitelogo from '../assets/whitebglogo.PNG'
 import { IoIosArrowDown } from "react-icons/io";
 import { IoSearchOutline } from "react-icons/io5";
-
+import { Link } from 'react-router-dom';
 
 export default function Search() {
 
@@ -12,7 +12,9 @@ export default function Search() {
     <>
 <div className='border'></div>
    <div className='searchbar'>
+    <Link to="/">
 <img src={whitelogo} className='logo'></img>
+</Link>
 <div className='shopbycaate'>
     Shop by <br /> category <IoIosArrowDown />
 </div>
