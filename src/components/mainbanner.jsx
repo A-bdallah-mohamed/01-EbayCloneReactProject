@@ -4,7 +4,7 @@ import { Productsprovider , useProductscontext } from './productsprovider';
 import { RiArrowLeftSLine } from "react-icons/ri";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 export default function Mainbanner() {
 
 
@@ -82,7 +82,9 @@ const secondpanel = (
   </div>
   {mensshirtthree.length > 0 ? (
   <>
+  <Link to={`/pages/Productpage/${mensshirtthree[0].id}`} target="_blank" rel="noopener noreferrer">
   <div  className='w-[240px] mr-8 h-[240px]  rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${mensshirtthree[0].thumbnail})` , backgroundSize: 'cover'}}></div>
+  </Link>
   <div  className='w-[240px] mr-8 h-[240px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${mensshirtthree[1].thumbnail})` , backgroundSize: 'cover'}}></div>
   <div  className='w-[240px] mr-8 h-[240px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${mensshirtthree[2].thumbnail})` , backgroundSize: 'cover'}}></div>
   </>

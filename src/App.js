@@ -5,6 +5,7 @@ import { Productsprovider } from './components/productsprovider';
 import Categorypage from './pages/categorypage';
 import Cartpage from './pages/cartpage';
 import './App.css';
+import Productpage from './pages/productpage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" exact element={<Homepage />} />
           <Route path="/pages/categorypage" element={<Categorypage />} />
           <Route path="/pages/cartpage" element={<Cartpage />} />
+          <Route path="/pages/Productpage/:id" element={<Productpage />} />
         </Routes>
       </Router>
     </Productsprovider>
