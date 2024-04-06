@@ -65,9 +65,9 @@ const setnewimg = (img) => {
     {productimages.length > 0 ? (
         <div className='flex flex-col gap-[20px] w-[110px] items-center justify-center py-[5px]'>
 {productimages.map((image,index) => (
-    <div className={mainimg === image ? `rounded-2xl outline outline-[3px] overflow-hidden` : 'rounded-2xl hover:outline hover:outline-[1px] overflow-hidden'} onMouseEnter={()=>handlemouseenter(image)} onMouseLeave={()=>handlemouseleave()} onClick={()=>setnewimg(image)} >
+    <div className={mainimg === image ? `rounded-2xl outline outline-[3px] overflow-hidden w-[100px] h-[100px] flex items-center justify-center bg-slate-100` : 'rounded-2xl hover:outline hover:outline-[1px] overflow-hidden w-[100px] h-[100px] flex items-center justify-center bg-slate-100'} onMouseEnter={()=>handlemouseenter(image)} onMouseLeave={()=>handlemouseleave()} onClick={()=>setnewimg(image)} >
     <div className='text-white w-[100px] cursor-pointer '>
-        <img src={image} key={index}></img>
+        <img src={image} key={index} className=' max-h-full min-w-full'></img>
     </div>
     </div>
 ))}
@@ -77,7 +77,7 @@ const setnewimg = (img) => {
   <div className='ml-[15px] h-[450px] overflow-hidden w-[600px] bg-slate-100 flex items-center justify-center rounded-2xl'>
     {mainimg ?
      (
-         hovoredimg ? (<img className='w-auto max-h-full' src={hovoredimg}></img>) : (<img className='w-auto max-h-full' src={mainimg}></img>)
+         hovoredimg ? (<img className='w-auto max-h-full ' src={hovoredimg}></img>) : (<img className='w-auto max-h-full ' src={mainimg}></img>)
 
          ) 
      : 

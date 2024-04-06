@@ -38,7 +38,7 @@ const navigate = useNavigate();
     console.log('skin care',menshoes)
 
     }
-  },[products,navigate])
+  },[products])
   useEffect(() => {
 
   const firstpanel = (
@@ -47,7 +47,7 @@ const navigate = useNavigate();
 <div className='flex items-center px-12 pt-8'>
 <div className='flex flex-col justify-between h-[350px]'>
 <div>
-<div className='text-5xl font-bold mr-10 whitespace  hover:cursor-pointer'> Your Fvourite <br /> luxury brands for <br/>less</div><div className='text-xl my-3 font-semibold'>Save 15%* with coupon code <br /> LUXDEALS15 on special items for you.</div>
+<div className='text-5xl font-bold mr-10 whitespace  hover:cursor-pointer w-[400px]'> Your Fvourite <br /> luxury brands for <br/>less</div><div className='text-xl my-3 font-semibold'>Save 15%* with coupon code <br /> LUXDEALS15 on special items for you.</div>
 <button className=' w-[170px] h-[50px] border-2 border-black rounded-full mt-6 text-xl flex items-center justify-center font-semibold hover:bg-black hover:text-white transition-all'>Find your favs</button>
 </div>
 <div>
@@ -56,9 +56,15 @@ const navigate = useNavigate();
 </div>
 {womensjwelrythree.length > 0 ? (
 <>
-<div  className='w-[240px] mr-8 h-[240px]  rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${womensjwelrythree[0].thumbnail})` , backgroundSize: 'cover'}}></div>
-<div  className='w-[240px] mr-8 h-[240px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${womensjwelrythree[1].thumbnail})` , backgroundSize: 'cover'}}></div>
-<div  className='w-[240px] mr-8 h-[240px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${womensjwelrythree[2].thumbnail})` , backgroundSize: 'cover'}}></div>
+  <Link to={`/pages/Productpage/${womensjwelrythree[0].id}`} target="_blank" rel="noopener noreferrer" className='max-w-[200px] mr-4'>
+    <div  className='w-[200px] h-[200px]  rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${womensjwelrythree[0].thumbnail})` , backgroundSize: 'cover'}}></div>
+  </Link>
+
+  <Link to={`/pages/Productpage/${womensjwelrythree[1].id}`} target="_blank" rel="noopener noreferrer" className='max-w-[200px] mr-4'><div  className='w-[200px]  h-[200px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${womensjwelrythree[1].thumbnail})` , backgroundSize: 'cover'}}></div></Link>
+
+  <Link to={`/pages/Productpage/${womensjwelrythree[2].id}`} target="_blank" rel="noopener noreferrer" className='max-w-[200px] mr-4'><div  className='w-[200px]  h-[200px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${womensjwelrythree[2].thumbnail})` , backgroundSize: 'cover'}}></div></Link>
+
+
 </>
 ) : (<div>Loading ...</div>)}
 </div>
@@ -73,7 +79,7 @@ const secondpanel = (
   <div className='flex items-center px-12 pt-8'>
   <div className='flex flex-col justify-between h-[350px]'>
     <div>
-   <div className='text-5xl font-bold mr-10 whitespace hover:cursor-pointer '> Unique Pieces <br /> to trasure  <br/>forever</div><div className='text-xl my-3 font-semibold'>Save 15%* with coupon code <br /> LUXDEALS15 on special items for you.</div>
+   <div className='text-5xl font-bold mr-10 whitespace hover:cursor-pointer w-[400px]'> Unique Pieces <br /> to trasure  <br/>forever</div><div className='text-xl my-3 font-semibold'>Save 15%* with coupon code <br /> LUXDEALS15 on special items for you.</div>
    <button className=' w-[170px] h-[50px] border-2 border-black rounded-full mt-6 text-xl flex items-center justify-center font-semibold hover:bg-black hover:text-white transition-all'>Shop now</button>
    </div>
    <div>
@@ -82,11 +88,15 @@ const secondpanel = (
   </div>
   {mensshirtthree.length > 0 ? (
   <>
-  <Link to={`/pages/Productpage/${mensshirtthree[0].id}`} target="_blank" rel="noopener noreferrer">
-  <div  className='w-[240px] mr-8 h-[240px]  rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${mensshirtthree[0].thumbnail})` , backgroundSize: 'cover'}}></div>
+  <Link to={`/pages/Productpage/${mensshirtthree[0].id}`} target="_blank" rel="noopener noreferrer" className='mr-4 max-w-[200px]'>
+  <div  className='w-[200px]  h-[200px]  rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${mensshirtthree[0].thumbnail})` , backgroundSize: 'cover'}}></div>
   </Link>
-  <div  className='w-[240px] mr-8 h-[240px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${mensshirtthree[1].thumbnail})` , backgroundSize: 'cover'}}></div>
-  <div  className='w-[240px] mr-8 h-[240px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${mensshirtthree[2].thumbnail})` , backgroundSize: 'cover'}}></div>
+  <Link to={`/pages/Productpage/${mensshirtthree[1].id}`} target="_blank" rel="noopener noreferrer" className='mr-4 max-w-[200px]'>
+  <div  className='w-[200px]  h-[200px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${mensshirtthree[1].thumbnail})` , backgroundSize: 'cover'}}></div>
+  </Link>
+  <Link to={`/pages/Productpage/${mensshirtthree[2].id}`} target="_blank" rel="noopener noreferrer" className='mr-4 max-w-[200px]'>
+  <div  className='w-[200px] h-[200px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${mensshirtthree[2].thumbnail})` , backgroundSize: 'cover'}}></div>
+  </Link>
   </>
   ) : (<div>Loading ...</div>)}
   </div>
@@ -103,7 +113,7 @@ const thirdpanel = (
   <div className='flex items-center px-12 pt-8'>
   <div className='flex flex-col justify-between h-[350px]'>
     <div>
-   <div className='text-5xl font-bold mr-10 whitespace  hover:cursor-pointer'> On time, and in <br /> style </div><div className='text-xl my-3 font-semibold'>Save 15%* with coupon code <br /> LUXDEALS15 on special items for you.</div>
+   <div className='text-5xl font-bold mr-10 whitespace  hover:cursor-pointer w-[400px]'> On time, and in <br /> style </div><div className='text-xl my-3 font-semibold'>Save 15%* with coupon code <br /> LUXDEALS15 on special items for you.</div>
    <button className=' w-[170px] h-[50px] border-2 border-black rounded-full mt-6 text-xl flex items-center justify-center font-semibold hover:bg-black hover:text-white transition-all'>Shop now</button>
    </div>
    <div>
@@ -112,9 +122,11 @@ const thirdpanel = (
   </div>
   {menshoesthree.length > 0 ? (
   <>
-  <div  className='w-[240px] mr-8 h-[240px]  rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${menshoesthree[0].thumbnail})` , backgroundSize: 'cover'}}></div>
-  <div  className='w-[240px] mr-8 h-[240px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${menshoesthree[1].thumbnail})` , backgroundSize: 'cover'}}></div>
-  <div  className='w-[240px] mr-8 h-[240px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${menshoesthree[2].thumbnail})` , backgroundSize: 'cover'}}></div>
+  
+  <Link to={`/pages/Productpage/${menshoesthree[0].id}`} target="_blank" rel="noopener noreferrer" className='mr-4 max-w-[200px]'> <div  className='w-[200px]  h-[200px]  rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${menshoesthree[0].thumbnail})` , backgroundSize: 'cover'}}></div></Link>
+  <Link to={`/pages/Productpage/${menshoesthree[1].id}`} target="_blank" rel="noopener noreferrer" className='mr-4 max-w-[200px]'>  <div  className='w-[200px]  h-[200px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${menshoesthree[1].thumbnail})` , backgroundSize: 'cover'}}></div></Link>
+  <Link to={`/pages/Productpage/${menshoesthree[2].id}`} target="_blank" rel="noopener noreferrer" className='mr-4 max-w-[200px]'> <div  className='w-[200px]  h-[200px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${menshoesthree[2].thumbnail})` , backgroundSize: 'cover'}}></div></Link>
+ 
   </>
   ) : (<div>Loading ...</div>)}
   </div>
@@ -132,7 +144,7 @@ const fourthpanel = (
   <div className='flex items-center px-12 pt-8'>
   <div className='flex flex-col justify-between h-[350px]'>
     <div>
-   <div className='text-5xl font-bold mr-10 whitespace  hover:cursor-pointer'> The ultimate <br /> luxury <br/>accessory</div><div className='text-xl my-3 font-semibold'>Save 15%* with coupon code <br /> LUXDEALS15 on special items for you.</div>
+   <div className='text-5xl font-bold mr-10 whitespace  hover:cursor-pointer w-[400px]'> The ultimate <br /> luxury <br/>accessory</div><div className='text-xl my-3 font-semibold'>Save 15%* with coupon code <br /> LUXDEALS15 on special items for you.</div>
    <button className=' w-[170px] h-[50px] border-2 border-black rounded-full mt-6 text-xl flex items-center justify-center font-semibold hover:bg-black hover:text-white transition-all'>Shop and Save</button>
    </div>
    <div>
@@ -141,9 +153,11 @@ const fourthpanel = (
   </div>
   {skincarethree.length > 0 ? (
   <>
-  <div  className='w-[240px] mr-8 h-[240px]  rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${skincarethree[0].thumbnail})` , backgroundSize: 'cover'}}></div>
-  <div  className='w-[240px] mr-8 h-[240px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${skincarethree[1].thumbnail})` , backgroundSize: 'cover'}}></div>
-  <div  className='w-[240px] mr-8 h-[240px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${skincarethree[2].thumbnail})` , backgroundSize: 'cover'}}></div>
+   <Link to={`/pages/Productpage/${skincarethree[0].id}`} target="_blank" rel="noopener noreferrer" className='mr-4 max-w-[200px]'> <div  className='w-[200px]  h-[200px]  rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${skincarethree[0].thumbnail})` , backgroundSize: 'cover'}}></div></Link>
+    <Link to={`/pages/Productpage/${skincarethree[1].id}`} target="_blank" rel="noopener noreferrer" className='mr-4 max-w-[200px]'> <div  className='w-[200px]  h-[200px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${skincarethree[1].thumbnail})` , backgroundSize: 'cover'}}></div></Link>
+    <Link to={`/pages/Productpage/${skincarethree[2].id}`} target="_blank" rel="noopener noreferrer" className='mr-4 max-w-[200px]'><div  className='w-[200px]  h-[200px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${skincarethree[2].thumbnail})` , backgroundSize: 'cover'}}></div> </Link>
+  
+  
   </>
   ) : (<div>Loading ...</div>)}
   </div>
@@ -154,7 +168,7 @@ const fourthpanel = (
 const bannerpanels = [firstpanel,secondpanel,thirdpanel,fourthpanel]
 setpanels(bannerpanels)
 
-},[panels]);
+},[skincarethree]);
 
 
 useEffect(() => {

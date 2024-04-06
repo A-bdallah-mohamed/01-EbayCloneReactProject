@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { Productsprovider, useProductscontext } from './productsprovider'
 import { RiArrowLeftSLine } from "react-icons/ri";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-
+import { Link } from 'react-router-dom';
 export default function Similaritems({product}) {
     const [similars,setsimilars] = useState([])
   const scrolldiv = useRef(null);
@@ -47,6 +47,7 @@ console.log('similars',similars)
 
 
 {similars.map((product,id) => (
+      <Link to={`/pages/Productpage/${product.id}`} target='_blank'>
   <div className='maindealcontainer cursor-pointer' key={id}>
     <div className='maindeal ' style={{backgroundImage:`url(${product.thumbnail})`, backgroundSize: 'cover'}}>
     </div>
@@ -58,6 +59,7 @@ console.log('similars',similars)
     </div>
     </div>
   </div>
+  </Link>
 ))}
 
 <button className='arrow-right' onClick={scrollright}><MdOutlineKeyboardArrowRight /></button>

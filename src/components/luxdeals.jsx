@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useProductscontext } from './productsprovider'
-
+import { Link } from 'react-router-dom';
 export default function Luxdeals() {
   const { products } = useProductscontext();
   const luxproduct = products[80]
@@ -18,7 +18,9 @@ export default function Luxdeals() {
         <div className='mt-[25px] underline cursor-pointer hover:no-underline'>*min. spend $300, max discount $100</div>
         </div>
        {luxproduct ? (
-        <div  className='w-[400px] h-[400px] rounded-xl'  style={{backgroundImage: `url(${luxproduct.thumbnail})` , backgroundSize: 'cover'}}></div>
+        <Link to={`/pages/productpage/${luxproduct.id}`} target='_blank'>
+        <div  className='w-[400px] h-[400px] rounded-xl cursor-pointer'  style={{backgroundImage: `url(${luxproduct.thumbnail})` , backgroundSize: 'cover'}}></div>
+        </Link>
        ) : (<div>loading</div>)}
   
       

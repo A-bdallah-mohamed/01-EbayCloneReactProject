@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { Productsprovider, useProductscontext } from './productsprovider'
 import { RiArrowLeftSLine } from "react-icons/ri";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-
+import { Link } from 'react-router-dom';
 export default function Todaysdeals() {
   const scrolldiv = useRef(null);
 
@@ -40,6 +40,7 @@ export default function Todaysdeals() {
 <div className='w-[300px] h-[80px] px-[10px]'></div>
 </div>
 {topeightproducts.map((product,id) => (
+  <Link to={`/pages/Productpage/${product.id}`} target='_blank'>
   <div className='maindealcontainer cursor-pointer' key={id}>
     <div className='maindeal ' style={{backgroundImage:`url(${product.thumbnail})`, backgroundSize: 'cover'}}>
     </div>
@@ -51,6 +52,7 @@ export default function Todaysdeals() {
     </div>
     </div>
   </div>
+  </Link>
 ))}
 
 <button className='arrow-right' onClick={scrollright}><MdOutlineKeyboardArrowRight /></button>
