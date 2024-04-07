@@ -6,7 +6,7 @@ import Categorypage from './pages/categorypage';
 import Cartpage from './pages/cartpage';
 import './App.css';
 import Productpage from './pages/productpage';
-
+import Searchpage from './pages/searchpage';
 function App() {
   return (
     
@@ -17,6 +17,7 @@ function App() {
           <Route path="/pages/categorypage/:category" element={<Categorypage />} />
           <Route path="/pages/cartpage" element={<Cartpage />} />
           <Route path="/pages/Productpage/:id" element={<Productpage />} />
+          <Route path="/pages/searchpage/:searchtext" element={<Searchpage />} />
         </Routes>
       </Router>
     </Productsprovider>

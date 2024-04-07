@@ -14,11 +14,11 @@ export default function Categorypage() {
   const uniqueCategories = [...new Set(products.map(product => product.category))];
   const { category } = useParams();
   const [productscategory,setproductscategory] = useState();
-  console.log('category is : ',category)
+
   useEffect(() => {
 const catprod = products.filter(p => p.category === category) 
 setproductscategory(catprod)
-console.log('products are',productscategory)
+
   },[products,category])
 
 useEffect(() => {

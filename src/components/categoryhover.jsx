@@ -6,7 +6,7 @@ const [currentcatproducts,setcurrentcatproducts] = useState([])
 useEffect(()=> {
 const cateproducts = products.filter(product => product.category === selectedcat)
 setcurrentcatproducts(cateproducts)
-console.log(currentcatproducts)
+
 },[products,selectedcat])
   return (
 

@@ -16,6 +16,7 @@ const [menshoesthree , setmenshoesthree] = useState([]);
 const [skincarethree , setskincarethree] = useState([]); 
 const [activepanel, setactivepanel] = useState(null);
 const [activePanelIndex, setActivePanelIndex] = useState(0);
+const [delayy,setdelay] = useState(2000);
 
 const navigate = useNavigate();
 
@@ -35,7 +36,7 @@ const navigate = useNavigate();
     const skincare = products.filter(product => product.category === "skincare")
     setskincarethree(skincare.slice(0,3))
 
-    console.log('skin care',menshoes)
+   
 
     }
   },[products])
@@ -189,12 +190,20 @@ useEffect(() => {
 
 const handleNext = () => {
   setActivePanelIndex((prevIndex) => (prevIndex + 1) % panels.length);
+  setdelay(4000);
+  setTimeout(() => {
+    setdelay(2000)
+  }, 4000);
 };
 
 const handlePrev = () => {
   setActivePanelIndex((prevIndex) =>
     prevIndex === 0 ? panels.length - 1 : prevIndex - 1
   ); 
+setdelay(4000);
+setTimeout(() => {
+  setdelay(2000)
+}, 4000);
 };
 
 
@@ -202,12 +211,12 @@ useEffect(() => {
   const intervalId = setInterval(() => {
     setActivePanelIndex((prevIndex) => (prevIndex + 1) % panels.length);
 
-  }, 2000);
+  }, delayy);
 
   return () => clearInterval(intervalId);
 
 
-},[panels,navigate])
+},[panels,navigate,delayy])
 
 
 

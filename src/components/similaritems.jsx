@@ -13,7 +13,7 @@ export default function Similaritems({product}) {
 useEffect(() => {
     const similaritems = products.filter(p => p.brand === product.brand || p.category === product.category) 
 setsimilars(similaritems)
-console.log('similars',similars)
+
 },[product])
 
 

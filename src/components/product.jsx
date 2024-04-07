@@ -30,14 +30,14 @@ export default function Product({product}) {
       
 
 
-console.log('product is' , product)
+
 const [productimages,setproductimages] = useState([])
 const [mainimg,setmainimg] = useState()
 const [hovoredimg,sethovoredimg] = useState();
 useEffect(() => {
 if(product && product.images){
  setproductimages(product.images)
-console.log('images ',productimages)
+
 setmainimg(productimages[0])
  }
 },[product])

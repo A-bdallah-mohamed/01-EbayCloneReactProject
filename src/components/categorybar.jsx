@@ -14,7 +14,7 @@ export default function Categorybar() {
     {firstTenCategories.map((category ,indx) => (
        
         <Link to={`/pages/categorypage/${category}`} key={indx}>
-        <div  className='categoryncategorybar px-[10px]' onMouseEnter={() =>{setselectedcat(category);console.log(category);setcatishovered(true)}} onMouseLeave={() =>{setcatishovered(false)}}>{category}</div>
+        <div  className='categoryncategorybar px-[10px]' onMouseEnter={() =>{setselectedcat(category);setcatishovered(true)}} onMouseLeave={() =>{setcatishovered(false)}}>{category}</div>
         </Link>
       
       ))}

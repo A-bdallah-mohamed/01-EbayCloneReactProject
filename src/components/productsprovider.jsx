@@ -22,7 +22,7 @@ try {
           settotal(data.total)
           setluxproduct(products[80])
       } catch (error){
-        console.log('Error fetching products:', error)
+  
       }
     }
     fetchData();
