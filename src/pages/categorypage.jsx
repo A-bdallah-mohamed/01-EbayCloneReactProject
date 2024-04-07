@@ -20,6 +20,19 @@ const catprod = products.filter(p => p.category === category)
 setproductscategory(catprod)
 console.log('products are',productscategory)
   },[products,category])
+
+useEffect(() => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' 
+  });
+},[])
+const scrolltotop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' 
+  });
+}
   return (
     <>
     <div className='w-full flex-col flex justify-center items-center'>
@@ -37,8 +50,8 @@ console.log('products are',productscategory)
   <div className='font-semibold text-xl mb-5'> Shop by Category</div>
   <div className='flex flex-col gap-1 ml-2'>
     {uniqueCategories.map((category,indx) => (
-         <Link to={`/pages/categorypage/${category}`} key={category}>
-      <div key={indx} className='hover:underline cursor-pointer w-full'>{category}</div>
+         <Link to={`/pages/categorypage/${category}`} key={indx} onClick={scrolltotop}>
+      <div className='hover:underline cursor-pointer w-full' >{category}</div>
       </Link>
     ))}
   </div>
@@ -50,9 +63,9 @@ console.log('products are',productscategory)
 <div className='flex flex-col'>
 <div className='text-xl font-semibold ml-2 mb-5'>All listings</div>
 <div className='flex flex-wrap gap-[25px] mb-[25px]'>
-{productscategory.map((product,id) => (
-  <div className='flex flex-col max-w-[300px]'>
-  <div key={id} className='w-[300px] h-[300px]  bg-slate-100 rounded-xl overflow-hidden flex items-center justify-center'>
+{productscategory ?  (productscategory.map((product,id) => (
+  <div key={id} className='flex flex-col max-w-[300px]'>
+  <div  className='w-[300px] h-[300px]  bg-slate-100 rounded-xl overflow-hidden flex items-center justify-center'>
   <Link to={`/pages/Productpage/${product.id}`} target="_blank" rel="noopener noreferrer">
     <img src={product.thumbnail} className='cursor-pointer'></img>
     </Link>
@@ -64,7 +77,7 @@ console.log('products are',productscategory)
     <div className='text-slate-400'>%{product.discountPercentage}</div>
     <div className='text-sm'>In stock : {product.stock}</div>
   </div>
-))}
+)) ) : (<div>Loading ...</div>)}
 </div>
 </div>
 

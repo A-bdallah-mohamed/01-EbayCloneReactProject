@@ -48,7 +48,9 @@ const navigate = useNavigate();
 <div className='flex flex-col justify-between h-[350px]'>
 <div>
 <div className='text-5xl font-bold mr-10 whitespace  hover:cursor-pointer w-[400px]'> Your Fvourite <br /> luxury brands for <br/>less</div><div className='text-xl my-3 font-semibold'>Save 15%* with coupon code <br /> LUXDEALS15 on special items for you.</div>
+<Link to={`/pages/categorypage/womens-bags`}>
 <button className=' w-[170px] h-[50px] border-2 border-black rounded-full mt-6 text-xl flex items-center justify-center font-semibold hover:bg-black hover:text-white transition-all'>Find your favs</button>
+</Link>
 </div>
 <div>
 <div className='bottom-0 underline cursor-pointer hover:no-underline'>
@@ -80,7 +82,9 @@ const secondpanel = (
   <div className='flex flex-col justify-between h-[350px]'>
     <div>
    <div className='text-5xl font-bold mr-10 whitespace hover:cursor-pointer w-[400px]'> Unique Pieces <br /> to trasure  <br/>forever</div><div className='text-xl my-3 font-semibold'>Save 15%* with coupon code <br /> LUXDEALS15 on special items for you.</div>
+   <Link to={`/pages/categorypage/mens-shirts`}>
    <button className=' w-[170px] h-[50px] border-2 border-black rounded-full mt-6 text-xl flex items-center justify-center font-semibold hover:bg-black hover:text-white transition-all'>Shop now</button>
+   </Link>
    </div>
    <div>
    <div className='bottom-0 underline cursor-pointer hover:no-underline'>
@@ -113,8 +117,11 @@ const thirdpanel = (
   <div className='flex items-center px-12 pt-8'>
   <div className='flex flex-col justify-between h-[350px]'>
     <div>
-   <div className='text-5xl font-bold mr-10 whitespace  hover:cursor-pointer w-[400px]'> On time, and in <br /> style </div><div className='text-xl my-3 font-semibold'>Save 15%* with coupon code <br /> LUXDEALS15 on special items for you.</div>
+   
+  <div className='text-5xl font-bold mr-10 whitespace  hover:cursor-pointer w-[400px]'> On time, and in <br /> style </div><div className='text-xl my-3 font-semibold'>Save 15%* with coupon code <br /> LUXDEALS15 on special items for you.</div>
+  <Link to={`/pages/categorypage/mens-shoes`}>
    <button className=' w-[170px] h-[50px] border-2 border-black rounded-full mt-6 text-xl flex items-center justify-center font-semibold hover:bg-black hover:text-white transition-all'>Shop now</button>
+  </Link>
    </div>
    <div>
    <div className='bottom-0 underline cursor-pointer hover:no-underline'>
@@ -145,7 +152,9 @@ const fourthpanel = (
   <div className='flex flex-col justify-between h-[350px]'>
     <div>
    <div className='text-5xl font-bold mr-10 whitespace  hover:cursor-pointer w-[400px]'> The ultimate <br /> luxury <br/>accessory</div><div className='text-xl my-3 font-semibold'>Save 15%* with coupon code <br /> LUXDEALS15 on special items for you.</div>
+   <Link to={`/pages/categorypage/skincare`}>
    <button className=' w-[170px] h-[50px] border-2 border-black rounded-full mt-6 text-xl flex items-center justify-center font-semibold hover:bg-black hover:text-white transition-all'>Shop and Save</button>
+   </Link>
    </div>
    <div>
    <div className='bottom-0 underline cursor-pointer hover:no-underline'>

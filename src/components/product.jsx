@@ -65,7 +65,7 @@ const setnewimg = (img) => {
     {productimages.length > 0 ? (
         <div className='flex flex-col gap-[20px] w-[110px] items-center justify-center py-[5px]'>
 {productimages.map((image,index) => (
-    <div className={mainimg === image ? `rounded-2xl outline outline-[3px] overflow-hidden w-[100px] h-[100px] flex items-center justify-center bg-slate-100` : 'rounded-2xl hover:outline hover:outline-[1px] overflow-hidden w-[100px] h-[100px] flex items-center justify-center bg-slate-100'} onMouseEnter={()=>handlemouseenter(image)} onMouseLeave={()=>handlemouseleave()} onClick={()=>setnewimg(image)} >
+    <div key={index} className={mainimg === image ? `rounded-2xl outline outline-[3px] overflow-hidden w-[100px] h-[100px] flex items-center justify-center bg-slate-100` : 'rounded-2xl hover:outline hover:outline-[1px] overflow-hidden w-[100px] h-[100px] flex items-center justify-center bg-slate-100'} onMouseEnter={()=>handlemouseenter(image)} onMouseLeave={()=>handlemouseleave()} onClick={()=>setnewimg(image)} >
     <div className='text-white w-[100px] cursor-pointer '>
         <img src={image} key={index} className=' max-h-full min-w-full'></img>
     </div>

@@ -11,12 +11,12 @@ export default function Categorybar() {
   return (
     <>
     <div className='categorybar relative'>
-    {firstTenCategories.map(category => (
-        <>
-        <Link to={`/pages/categorypage/${category}`} key={category}>
+    {firstTenCategories.map((category ,indx) => (
+       
+        <Link to={`/pages/categorypage/${category}`} key={indx}>
         <div  className='categoryncategorybar px-[10px]' onMouseEnter={() =>{setselectedcat(category);console.log(category);setcatishovered(true)}} onMouseLeave={() =>{setcatishovered(false)}}>{category}</div>
         </Link>
-        </>
+      
       ))}
      
     </div>
