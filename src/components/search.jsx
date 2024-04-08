@@ -10,15 +10,16 @@ export default function Search() {
 const [searchtext,setsearchtext] = useState("")
 const handlesearch = (e) => {
   setsearchtext(e.target.value)
-  console.log(e.target.value)
+  console.log(searchtext)
 }
 const handleEnterPress = (e) => {
   if(e.key === 'Enter'){
     window.location.href = `/pages/searchpage/${searchtext}`;
   }
-
 };
-
+const handlebuttonsearch = () => {
+  window.location.href = `/pages/searchpage/${searchtext}`;
+}
   return (
     <>
 <div className='border'></div>
@@ -33,9 +34,7 @@ const handleEnterPress = (e) => {
     <IoSearchOutline className='searchicon' />
 <input placeholder=' Search For anything' className='realinput' value={searchtext}  onChange={(e) => handlesearch(e)} onKeyPress={(e) => handleEnterPress(e)}></input>
 </div>
-
-<button className='searchbutton' ><Link to={`/pages/searchpage/${searchtext}`}>Search</Link></button>
-
+<button className='searchbutton' onClick={()=>handlebuttonsearch()}>Search</button>
    </div>
    </>
   )
