@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react'
 import furniturlogo from '../assets/furniturecategory.PNG'
 import { CiHeart } from "react-icons/ci";
 import Similaritems from './similaritems';
-
+import { useCartContext } from './cartprovider';
 export default function Product({product}) {
+  const {cart,setcart} = useCartContext()
     const  [stars,setstars] = useState([])
   
     useEffect(() => {
@@ -38,7 +39,7 @@ useEffect(() => {
 if(product && product.images){
  setproductimages(product.images)
 
-setmainimg(productimages[0])
+setmainimg(product.thumbnail)
  }
 },[product])
 
@@ -52,6 +53,13 @@ sethovoredimg(null)
 const setnewimg = (img) => {
     setmainimg(img)
 }
+
+const addtocart = (p) => {
+  const newarray = [...cart, p]; // Spread the existing cart items and add the new product
+  setcart(newarray); // Update the cart state with the new array
+  console.log(newarray); // Log the updated cart array
+}
+
   return (  
       <div className='w-full flex-col flex justify-center items-center'>
   <div className='contentwidth'>
@@ -102,7 +110,9 @@ const setnewimg = (img) => {
 <div className='text-md'>description : {product.description}</div>
 <div className='flex flex-col gap-[15px]'>
     <button className='w-full h-[50px] rounded-full bg-blue-800 text-whiet font-bold text-white hover:bg-indigo-800'>Buy it Now</button>
-    <button className='w-full h-[50px] rounded-full bg-cyan-500 text-whiet font-bold text-white hover:bg-indigo-800'>Add to cart</button>
+    <button className='w-full h-[50px] rounded-full bg-cyan-500 text-whiet font-bold text-white hover:bg-indigo-800' 
+    onClick={()=>addtocart(product)}
+    >Add to cart</button>
     <button className='w-full h-[50px] rounded-full border-2 border-blue-800 text-whiet font-bold text-blue-800  flex items-center justify-center'><CiHeart />Add to watchlist</button>
 </div></>) : (<div>Loading data...</div>)}
 

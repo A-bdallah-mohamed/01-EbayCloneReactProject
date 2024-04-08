@@ -59,13 +59,13 @@ const navigate = useNavigate();
 </div>
 {womensjwelrythree.length > 0 ? (
 <>
-  <Link to={`/pages/Productpage/${womensjwelrythree[0].id}`} target="_blank" rel="noopener noreferrer" className='max-w-[200px] mr-4'>
+  <Link to={`/pages/Productpage/${womensjwelrythree[0].id}`} className='max-w-[200px] mr-4'>
     <div  className='w-[200px] h-[200px]  rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${womensjwelrythree[0].thumbnail})` , backgroundSize: 'cover'}}></div>
   </Link>
 
-  <Link to={`/pages/Productpage/${womensjwelrythree[1].id}`} target="_blank" rel="noopener noreferrer" className='max-w-[200px] mr-4'><div  className='w-[200px]  h-[200px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${womensjwelrythree[1].thumbnail})` , backgroundSize: 'cover'}}></div></Link>
+  <Link to={`/pages/Productpage/${womensjwelrythree[1].id}`} className='max-w-[200px] mr-4'><div  className='w-[200px]  h-[200px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${womensjwelrythree[1].thumbnail})` , backgroundSize: 'cover'}}></div></Link>
 
-  <Link to={`/pages/Productpage/${womensjwelrythree[2].id}`} target="_blank" rel="noopener noreferrer" className='max-w-[200px] mr-4'><div  className='w-[200px]  h-[200px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${womensjwelrythree[2].thumbnail})` , backgroundSize: 'cover'}}></div></Link>
+  <Link to={`/pages/Productpage/${womensjwelrythree[2].id}`} className='max-w-[200px] mr-4'><div  className='w-[200px]  h-[200px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${womensjwelrythree[2].thumbnail})` , backgroundSize: 'cover'}}></div></Link>
 
 
 </>
@@ -93,13 +93,13 @@ const secondpanel = (
   </div>
   {mensshirtthree.length > 0 ? (
   <>
-  <Link to={`/pages/Productpage/${mensshirtthree[0].id}`} target="_blank" rel="noopener noreferrer" className='mr-4 max-w-[200px]'>
+  <Link to={`/pages/Productpage/${mensshirtthree[0].id}`} className='mr-4 max-w-[200px]'>
   <div  className='w-[200px]  h-[200px]  rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${mensshirtthree[0].thumbnail})` , backgroundSize: 'cover'}}></div>
   </Link>
-  <Link to={`/pages/Productpage/${mensshirtthree[1].id}`} target="_blank" rel="noopener noreferrer" className='mr-4 max-w-[200px]'>
+  <Link to={`/pages/Productpage/${mensshirtthree[1].id}`} className='mr-4 max-w-[200px]'>
   <div  className='w-[200px]  h-[200px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${mensshirtthree[1].thumbnail})` , backgroundSize: 'cover'}}></div>
   </Link>
-  <Link to={`/pages/Productpage/${mensshirtthree[2].id}`} target="_blank" rel="noopener noreferrer" className='mr-4 max-w-[200px]'>
+  <Link to={`/pages/Productpage/${mensshirtthree[2].id}`} className='mr-4 max-w-[200px]'>
   <div  className='w-[200px] h-[200px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${mensshirtthree[2].thumbnail})` , backgroundSize: 'cover'}}></div>
   </Link>
   </>
@@ -131,9 +131,9 @@ const thirdpanel = (
   {menshoesthree.length > 0 ? (
   <>
   
-  <Link to={`/pages/Productpage/${menshoesthree[0].id}`} target="_blank" rel="noopener noreferrer" className='mr-4 max-w-[200px]'> <div  className='w-[200px]  h-[200px]  rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${menshoesthree[0].thumbnail})` , backgroundSize: 'cover'}}></div></Link>
-  <Link to={`/pages/Productpage/${menshoesthree[1].id}`} target="_blank" rel="noopener noreferrer" className='mr-4 max-w-[200px]'>  <div  className='w-[200px]  h-[200px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${menshoesthree[1].thumbnail})` , backgroundSize: 'cover'}}></div></Link>
-  <Link to={`/pages/Productpage/${menshoesthree[2].id}`} target="_blank" rel="noopener noreferrer" className='mr-4 max-w-[200px]'> <div  className='w-[200px]  h-[200px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${menshoesthree[2].thumbnail})` , backgroundSize: 'cover'}}></div></Link>
+  <Link to={`/pages/Productpage/${menshoesthree[0].id}`} className='mr-4 max-w-[200px]'> <div  className='w-[200px]  h-[200px]  rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${menshoesthree[0].thumbnail})` , backgroundSize: 'cover'}}></div></Link>
+  <Link to={`/pages/Productpage/${menshoesthree[1].id}`} className='mr-4 max-w-[200px]'>  <div  className='w-[200px]  h-[200px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${menshoesthree[1].thumbnail})` , backgroundSize: 'cover'}}></div></Link>
+  <Link to={`/pages/Productpage/${menshoesthree[2].id}`} className='mr-4 max-w-[200px]'> <div  className='w-[200px]  h-[200px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${menshoesthree[2].thumbnail})` , backgroundSize: 'cover'}}></div></Link>
  
   </>
   ) : (<div>Loading ...</div>)}
@@ -163,9 +163,9 @@ const fourthpanel = (
   </div>
   {skincarethree.length > 0 ? (
   <>
-   <Link to={`/pages/Productpage/${skincarethree[0].id}`} target="_blank" rel="noopener noreferrer" className='mr-4 max-w-[200px]'> <div  className='w-[200px]  h-[200px]  rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${skincarethree[0].thumbnail})` , backgroundSize: 'cover'}}></div></Link>
-    <Link to={`/pages/Productpage/${skincarethree[1].id}`} target="_blank" rel="noopener noreferrer" className='mr-4 max-w-[200px]'> <div  className='w-[200px]  h-[200px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${skincarethree[1].thumbnail})` , backgroundSize: 'cover'}}></div></Link>
-    <Link to={`/pages/Productpage/${skincarethree[2].id}`} target="_blank" rel="noopener noreferrer" className='mr-4 max-w-[200px]'><div  className='w-[200px]  h-[200px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${skincarethree[2].thumbnail})` , backgroundSize: 'cover'}}></div> </Link>
+   <Link to={`/pages/Productpage/${skincarethree[0].id}`} className='mr-4 max-w-[200px]'> <div  className='w-[200px]  h-[200px]  rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${skincarethree[0].thumbnail})` , backgroundSize: 'cover'}}></div></Link>
+    <Link to={`/pages/Productpage/${skincarethree[1].id}`} className='mr-4 max-w-[200px]'> <div  className='w-[200px]  h-[200px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${skincarethree[1].thumbnail})` , backgroundSize: 'cover'}}></div></Link>
+    <Link to={`/pages/Productpage/${skincarethree[2].id}`} className='mr-4 max-w-[200px]'><div  className='w-[200px]  h-[200px] rounded-xl hover:cursor-pointer'  style={{backgroundImage: `url(${skincarethree[2].thumbnail})` , backgroundSize: 'cover'}}></div> </Link>
   
   
   </>

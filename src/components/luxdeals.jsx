@@ -18,7 +18,7 @@ export default function Luxdeals() {
         <div className='mt-[25px] underline cursor-pointer hover:no-underline'>*min. spend $300, max discount $100</div>
         </div>
        {luxproduct ? (
-        <Link to={`/pages/productpage/${luxproduct.id}`} target='_blank'>
+        <Link to={`/pages/productpage/${luxproduct.id}`}>
         <div  className='w-[400px] h-[400px] rounded-xl cursor-pointer'  style={{backgroundImage: `url(${luxproduct.thumbnail})` , backgroundSize: 'cover'}}></div>
         </Link>
        ) : (<div>loading</div>)}

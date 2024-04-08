@@ -28,11 +28,11 @@ useEffect(() => {
       (p.title && p.title.replace(/\s|-/g, '').toLowerCase().includes(searchtext.toLowerCase().replace(/\s|-/g, '')))  ||
       (p.brand && p.brand.toLowerCase().includes(searchtext.toLowerCase()))  || 
       (p.description && p.description.toLowerCase().includes(searchtext.toLowerCase())) )
-  setsearcheditems(searched); // searched items
+  setsearcheditems(searched); 
   const brand = [...new Set(products.map(p => p.brand))] 
-  setbrands(brand); // brands
+  setbrands(brand);
   const uniqueCategories = [...new Set(products.map(product => product.category))];
-  setcategories(uniqueCategories) //categories
+  setcategories(uniqueCategories)
 },[products,searchtext])
 function showallproducts() {
   setsearcheditems(products)
@@ -60,8 +60,8 @@ scrolltotop()
     <div className='contentwidth'> 
 <Loginbar />
 <Search />
-<div className='flex w-full mt-8'>   {/* main div */}
-<div className='w-[180px] h-auto  '> {/* filter div */}
+<div className='flex w-full mt-8'> 
+<div className='w-[180px] h-auto  '> 
 <div className='w-full flex  justify-center text-3xl font-bold mb-8'>Filters</div>
 <button className='w-full bg-blue-500 text-white font-bold h-12 rounded-md mb-5 hover:bg-blue-200' onClick={()=>showallproducts()}>Show all products</button>
 <div>
@@ -78,8 +78,8 @@ brands.map((brand,indx) => (
 categories.map((categ,indx) => (
   <div key={indx} className='cursor-pointer hover:underline' onClick={()=>setselectedcategory(categ)}>{categ}</div>))
 ) : (<div> Loading Brands ...</div>)}</div></div>
-<div className='ml-8'>    {/* products div */}
-<div className='flex gap-2 mt-2 mb-12'>    {/* results count div */}
+<div className='ml-8'>   
+<div className='flex gap-2 mt-2 mb-12'> 
 <div className='font-bold'>{searcheditems.length}</div> Results for <div className='font-bold'>
  {searcheditems === products || pressed ? (<div>All products</div>) : (<div> {searchtext}</div>)}</div> </div>
 <div className='mb-5 flex gap-5'>{selectedbrand ? 
@@ -97,11 +97,11 @@ onClick={()=>setselectedcategory(null)}
 {searcheditems ?  (searcheditems.map((product,id) => (
   <div key={id} className='flex flex-col max-w-[300px]'>
   <div  className='w-[300px] h-[300px]  bg-slate-100 rounded-xl overflow-hidden flex items-center justify-center'>
-  <Link to={`/pages/Productpage/${product.id}`} target="_blank" rel="noopener noreferrer">
+  <Link to={`/pages/Productpage/${product.id}`}>
     <img src={product.thumbnail} className='cursor-pointer'></img>
     </Link>
     </div>
-    <Link to={`/pages/Productpage/${product.id}`} target="_blank" rel="noopener noreferrer">
+    <Link to={`/pages/Productpage/${product.id}`}>
     <div className='cursor-pointer hover:underline ml-1 mt-2 mb-3 flex-wrap'>{product.title}</div>
     </Link>
     <div className='font-semibold text-xl'>${product.price}</div>

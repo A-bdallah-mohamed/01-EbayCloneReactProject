@@ -40,7 +40,7 @@ export default function Todaysdeals() {
 <div className='w-[300px] h-[80px] px-[10px]'></div>
 </div>
 {topeightproducts.map((product,id) => (
-  <Link to={`/pages/Productpage/${product.id}`} target='_blank' key={id}>
+  <Link to={`/pages/Productpage/${product.id}`}key={id}>
   <div className='maindealcontainer cursor-pointer' >
     <div className='maindeal ' style={{backgroundImage:`url(${product.thumbnail})`, backgroundSize: 'cover'}}>
     </div>

@@ -7,9 +7,10 @@ import Cartpage from './pages/cartpage';
 import './App.css';
 import Productpage from './pages/productpage';
 import Searchpage from './pages/searchpage';
+import { Cartprovider } from './components/cartprovider';
 function App() {
   return (
-    
+    <Cartprovider>
     <Productsprovider>
       <Router>
         <Routes>
@@ -21,6 +22,7 @@ function App() {
         </Routes>
       </Router>
     </Productsprovider>
+    </Cartprovider>
   );
 }
 

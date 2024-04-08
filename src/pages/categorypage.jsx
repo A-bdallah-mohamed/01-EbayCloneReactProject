@@ -66,11 +66,11 @@ const scrolltotop = () => {
 {productscategory ?  (productscategory.map((product,id) => (
   <div key={id} className='flex flex-col max-w-[300px]'>
   <div  className='w-[300px] h-[300px]  bg-slate-100 rounded-xl overflow-hidden flex items-center justify-center'>
-  <Link to={`/pages/Productpage/${product.id}`} target="_blank" rel="noopener noreferrer">
+  <Link to={`/pages/Productpage/${product.id}`}>
     <img src={product.thumbnail} className='cursor-pointer'></img>
     </Link>
     </div>
-    <Link to={`/pages/Productpage/${product.id}`} target="_blank" rel="noopener noreferrer">
+    <Link to={`/pages/Productpage/${product.id}`}>
     <div className='cursor-pointer hover:underline ml-1 mt-2 mb-3 flex-wrap'>{product.title}</div>
     </Link>
     <div className='font-semibold text-xl'>${product.price}</div>

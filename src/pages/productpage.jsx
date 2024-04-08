@@ -7,12 +7,13 @@ import Product from '../components/product';
 import Similaritems from '../components/similaritems';
 import Footer from '../components/footer';
 export default function Productpage() {
-const [product ,setproduct] = useState(null);
+const [product ,setproduct] = useState();
 const { products } = useProductscontext();
     const { id } = useParams();
 
 useEffect(() => {
     setproduct(products.find(p => p.id === parseInt(id)))
+  
 },[products, id])
 
 
@@ -22,8 +23,8 @@ useEffect(() => {
     <div className='contentwidth'>
 <Loginbar />
 <Search />
-<Product  product={product}/> 
-<Similaritems product={product}/>
+{product && <Product  product={product}/> }
+{product && <Similaritems product={product}/>}
 
 </div>
 
