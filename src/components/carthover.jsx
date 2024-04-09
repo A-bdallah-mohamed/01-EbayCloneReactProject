@@ -3,30 +3,23 @@ import { useCartContext } from './cartprovider'
 import { CiTrash } from "react-icons/ci";
 
 export default function Carthover({hovered,sethovered}) {
-    const {cart,setcart ,Uniquecart , setUniquecart} = useCartContext()
+    const {cart,setcart ,Uniquecart , setUniquecart,totalprice} = useCartContext()
 
  
 useEffect(()=>{
     if(cart.length > 0){
         const newarray = [...new Set(cart.map(product => product))];
-        const newarraywithcount = newarray.map(product  => ({
-            brand: product.brand,
-            category: product.category,
-            description: product.description,
-            discountPercentage: product.discountPercentage,
-            id: product.id,
-            images: product.images,
-            price: product.price,
-            rating: product.rating,
-            thumbnail: product.thumbnail,
-            stock: product.stock,
-            title: product.title,
-            count: cart.filter(p => p === product).length
+        const newarraywithcount = newarray.map(product  => ({...product,
+            count: cart.filter(p => p === product).length,
+            price: product.price * cart.filter(p => p === product).length
         }))
         setUniquecart(newarraywithcount)
         console.log(Uniquecart)
     }
 },[])
+useEffect(() => {
+    console.log('total is',totalprice)
+},[totalprice])
   return (
     <div className='w-[300px] h-auto  border-2 border-gray-300 bg-white p-5 flex flex-col ' 
     onMouseEnter={()=>sethovered(true)}
@@ -57,7 +50,7 @@ useEffect(()=>{
      
             <div className='absolute bottom-[120px] w-full bg-slate-100 left-0 px-5 h-[40px] flex items-center border-2 border-gray-300 text-xl justify-between'>
                 <div className='font-semibold'>Total</div>
-                <div>$100</div>
+                <div className='text-[18px] font-bold px-2'>$USD {totalprice}</div>
                 </div>
              <button disabled={cart.length === 0} className='w-full h-[40px] flex items-center justify-center bg-gray-300 text-white'>Checkout</button>
              <button disabled={cart.length === 0} className='w-full h-[40px] flex items-center justify-center bg-gray-300 text-blue-500'>View cart</button>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../App.css';
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { IoMdNotificationsOutline } from "react-icons/io";
@@ -6,9 +6,15 @@ import { IoIosArrowDown } from "react-icons/io";
 import { Link } from 'react-router-dom';
 import Carthover from './carthover';
 import { hover } from '@testing-library/user-event/dist/hover';
-
+import { useLocation } from 'react-router-dom';
 export default function Loginbar() {
+  const location = useLocation()
   const [hovered,sethovered] = useState(false)
+  useEffect(() => {
+if(location.pathname === '/pages/cartpage'){
+sethovered(false)
+}
+  },[hovered])
   return (
     <>
 <div className=' loginbar smallfont'>
