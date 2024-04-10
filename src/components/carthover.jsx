@@ -5,21 +5,14 @@ import { CiTrash } from "react-icons/ci";
 export default function Carthover({hovered,sethovered}) {
     const {cart,setcart ,Uniquecart , setUniquecart,totalprice} = useCartContext()
 
- 
-useEffect(()=>{
-    if(cart.length > 0){
-        const newarray = [...new Set(cart.map(product => product))];
-        const newarraywithcount = newarray.map(product  => ({...product,
-            count: cart.filter(p => p === product).length,
-            price: product.price * cart.filter(p => p === product).length
-        }))
-        setUniquecart(newarraywithcount)
-        console.log(Uniquecart)
-    }
-},[])
 useEffect(() => {
     console.log('total is',totalprice)
 },[totalprice])
+
+const removeitem = (product) => {
+const newarray = Uniquecart.filter(p => p !== product)
+setUniquecart(newarray)
+}
   return (
     <div className='w-[300px] h-auto  border-2 border-gray-300 bg-white p-5 flex flex-col ' 
     onMouseEnter={()=>sethovered(true)}
@@ -31,16 +24,16 @@ useEffect(() => {
              <div className='text-xl font-bold'>Shopping cart</div>
              <div className='mt-[20px] overflow-y-auto h-auto max-h-[300px] mb-8 gap-[20px] flex flex-col'>
                {Uniquecart.map((product , id) => (
-                <div key={id} className='min-h-[100px] flex flex-col relative'>
+                <div key={id} className='min-h-[100px] max-h-[100px] flex flex-col relative'>
                     <div className='flex'>
-<div className='min-w-[90px] max-w-[90px] min-h-full max-h-full flex items-center justify-center bg-slate-200'><img src={product.thumbnail}></img></div>
+<div className='min-w-[90px] max-w-[90px] min-h-full max-h-full flex items-center justify-center bg-slate-200'><img src={product.thumbnail} className='max-h-[100px]'></img></div>
 <div className='flex flex-col'>
 <div className='text-[15px] px-2'>{product.title}</div>
 <div className='text-[18px] font-bold px-2'>$USD {product.price}</div>
 <div>Quantity: {product.count}</div>
 </div>
                     </div>
-                    <div className='absolute right-2 bottom-2 cursor-pointer'><CiTrash /></div>
+                    <div className='absolute right-2 bottom-2 cursor-pointer' ><CiTrash onClick={()=>removeitem(product)} /></div>
                 </div>
                ))}
              </div>

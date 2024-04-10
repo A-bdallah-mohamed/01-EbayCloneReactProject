@@ -4,7 +4,7 @@ import { CiHeart } from "react-icons/ci";
 import Similaritems from './similaritems';
 import { useCartContext } from './cartprovider';
 export default function Product({product}) {
-  const {cart,setcart} = useCartContext()
+  const {cart,setcart,cartlength,Uniquecart} = useCartContext()
     const  [stars,setstars] = useState([])
   
     useEffect(() => {
@@ -58,6 +58,8 @@ const addtocart = (p) => {
   const newarray = [...cart, p]; // Spread the existing cart items and add the new product
   setcart(newarray); // Update the cart state with the new array
   console.log(newarray); // Log the updated cart array
+  console.log('unuique is is : ',Uniquecart)
+  console.log(cartlength)
 }
 
   return (  

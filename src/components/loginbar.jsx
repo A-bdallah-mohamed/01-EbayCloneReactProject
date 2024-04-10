@@ -7,7 +7,10 @@ import { Link } from 'react-router-dom';
 import Carthover from './carthover';
 import { hover } from '@testing-library/user-event/dist/hover';
 import { useLocation } from 'react-router-dom';
+import { useCartContext } from './cartprovider';
 export default function Loginbar() {
+  const {cartlength,setcartlength,Uniquecart} = useCartContext()
+
   const location = useLocation()
   const [hovered,sethovered] = useState(false)
   useEffect(() => {
@@ -24,7 +27,10 @@ sethovered(false)
 <div className='flexconetnt'>
    <div>Ship to</div><div>Sell</div>
    <div className='flex items-center justify-center gap-1 cursor-pointer'>Watchlist <IoIosArrowDown /></div><div className='flex items-center justify-center gap-1 cursor-pointer'>My ePAY <IoIosArrowDown /></div><div><IoMdNotificationsOutline className='text-2xl'/></div>
-   <Link to='/pages/cartpage'><div onMouseEnter={()=>sethovered(true)} onMouseLeave={()=>sethovered(false)}><MdOutlineShoppingCart className='text-2xl'/></div></Link>
+   <Link to='/pages/cartpage' className='relative'><div onMouseEnter={()=>sethovered(true)} onMouseLeave={()=>sethovered(false)}>
+   <div className={`absolute top-0 right-0 w-[13px] h-[13px] bg-red-500 rounded-full flex items-center justify-center text-white font-bold ${!(cartlength > 0) ? 'hidden' : 'flex'}`}>{cartlength}</div>
+
+    <MdOutlineShoppingCart className='text-2xl'/></div></Link>
 </div>
 </div>
 {hovered ? (

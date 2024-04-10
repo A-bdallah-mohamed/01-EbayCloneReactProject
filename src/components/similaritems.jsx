@@ -33,6 +33,12 @@ setsimilars(similaritems)
         scrolldiv.current.scrollLeft += 1050;
       }
     }
+    const scrolltotop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth' 
+      });
+    }
   return (
     <>
 <div className='flex flex-col mt-[20px]'>
@@ -48,7 +54,7 @@ setsimilars(similaritems)
 
 {similars.map((product,id) => (
       <Link to={`/pages/Productpage/${product.id}`}key={id}>
-  <div className='maindealcontainer cursor-pointer' >
+  <div className='maindealcontainer cursor-pointer'>
     <div className='maindeal ' style={{backgroundImage:`url(${product.thumbnail})`, backgroundSize: 'cover'}}>
     </div>
     <div className='w-[300px] h-[80px] px-[10px]'>
