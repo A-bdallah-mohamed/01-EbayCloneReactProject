@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState , useEffect} from 'react'
 import { useProductscontext } from './productsprovider'
 import whitelogo from '../assets/whitebglogo.PNG'
 import { IoIosArrowDown } from "react-icons/io";
@@ -12,14 +12,18 @@ const handlesearch = (e) => {
   setsearchtext(e.target.value)
   console.log(searchtext)
 }
-const handleEnterPress = (e) => {
-  if(e.key === 'Enter'){
-    window.location.href = `/pages/searchpage/${searchtext}`;
-  }
-};
-const handlebuttonsearch = () => {
-  window.location.href = `/pages/searchpage/${searchtext}`;
-}
+useEffect(() => {
+  const handleKeyPress = (event) => {
+
+    if (event.key === 'Enter') {
+      document.getElementById('myButton').click();
+    }
+  };
+  document.addEventListener('keydown', handleKeyPress);
+  return () => {
+    document.removeEventListener('keydown', handleKeyPress);
+  };
+}, []);
   return (
     <>
 <div className='border'></div>
@@ -32,9 +36,10 @@ const handlebuttonsearch = () => {
 </div>
 <div className='input'>
     <IoSearchOutline className='searchicon' />
-<input placeholder=' Search For anything' className='realinput' value={searchtext}  onChange={(e) => handlesearch(e)} onKeyPress={(e) => handleEnterPress(e)}></input>
+<input placeholder=' Search For anything' className='realinput' value={searchtext}  onChange={(e) => handlesearch(e)} ></input>
 </div>
-<button className='searchbutton' onClick={()=>handlebuttonsearch()}>Search</button>
+<Link to={`/pages/searchpage/${searchtext}`}>
+<button className='searchbutton' id='myButton'>Search</button></Link>
    </div>
    </>
   )

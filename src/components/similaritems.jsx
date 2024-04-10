@@ -53,7 +53,7 @@ setsimilars(similaritems)
 
 
 {similars.map((product,id) => (
-      <Link to={`/pages/Productpage/${product.id}`}key={id}>
+      <Link to={`/pages/Productpage/${product.id}`}key={id} onClick={()=>scrolltotop()}>
   <div className='maindealcontainer cursor-pointer'>
     <div className='maindeal ' style={{backgroundImage:`url(${product.thumbnail})`, backgroundSize: 'cover'}}>
     </div>

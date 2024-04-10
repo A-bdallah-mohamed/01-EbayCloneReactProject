@@ -4,7 +4,7 @@ import { CiHeart } from "react-icons/ci";
 import Similaritems from './similaritems';
 import { useCartContext } from './cartprovider';
 export default function Product({product}) {
-  const {cart,setcart,cartlength,Uniquecart} = useCartContext()
+  const {cart,setcart,cartlength,Uniquecart,setUniquecart} = useCartContext()
     const  [stars,setstars] = useState([])
   
     useEffect(() => {

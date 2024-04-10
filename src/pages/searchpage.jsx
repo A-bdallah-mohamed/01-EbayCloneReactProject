@@ -21,18 +21,21 @@ const [categories , setcategories] = useState([])
 const [selectedbrand,setselectedbrand] =useState()
 const [selectedcategory,setselectedcategory] =useState()
 const [pressed,setpressed] = useState(false)
+
 useEffect(() => {
-  const searched = products.filter(
-    p =>
-      (p.category && p.category.toLowerCase().includes(searchtext.toLowerCase())) ||
-      (p.title && p.title.replace(/\s|-/g, '').toLowerCase().includes(searchtext.toLowerCase().replace(/\s|-/g, '')))  ||
-      (p.brand && p.brand.toLowerCase().includes(searchtext.toLowerCase()))  || 
-      (p.description && p.description.toLowerCase().includes(searchtext.toLowerCase())) )
-  setsearcheditems(searched); 
-  const brand = [...new Set(products.map(p => p.brand))] 
-  setbrands(brand);
-  const uniqueCategories = [...new Set(products.map(product => product.category))];
-  setcategories(uniqueCategories)
+  setTimeout(() => {
+    const searched = products.filter(
+      p =>
+        (p.category && p.category.toLowerCase().includes(searchtext.toLowerCase())) ||
+        (p.title && p.title.replace(/\s|-/g, '').toLowerCase().includes(searchtext.toLowerCase().replace(/\s|-/g, '')))  ||
+        (p.brand && p.brand.toLowerCase().includes(searchtext.toLowerCase()))  || 
+        (p.description && p.description.toLowerCase().includes(searchtext.toLowerCase())) )
+    setsearcheditems(searched); 
+    const brand = [...new Set(products.map(p => p.brand))] 
+    setbrands(brand);
+    const uniqueCategories = [...new Set(products.map(product => product.category))];
+    setcategories(uniqueCategories)
+  }, 1);
 },[products,searchtext])
 function showallproducts() {
   setsearcheditems(products)

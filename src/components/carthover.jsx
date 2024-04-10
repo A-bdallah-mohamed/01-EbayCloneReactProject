@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useCartContext } from './cartprovider'
 import { CiTrash } from "react-icons/ci";
-
+import { Link } from 'react-router-dom';
 export default function Carthover({hovered,sethovered}) {
     const {cart,setcart ,Uniquecart , setUniquecart,totalprice} = useCartContext()
 
@@ -11,7 +11,9 @@ useEffect(() => {
 
 const removeitem = (product) => {
 const newarray = Uniquecart.filter(p => p !== product)
+const newcartarray = cart.filter(p => p.title !== product.title)
 setUniquecart(newarray)
+setcart(newcartarray)
 }
   return (
     <div className='w-[300px] h-auto  border-2 border-gray-300 bg-white p-5 flex flex-col ' 
@@ -45,9 +47,15 @@ setUniquecart(newarray)
                 <div className='font-semibold'>Total</div>
                 <div className='text-[18px] font-bold px-2'>$USD {totalprice}</div>
                 </div>
-             <button disabled={cart.length === 0} className='w-full h-[40px] flex items-center justify-center bg-gray-300 text-white'>Checkout</button>
-             <button disabled={cart.length === 0} className='w-full h-[40px] flex items-center justify-center bg-gray-300 text-blue-500'>View cart</button>
+            
          </div>
+         
+<div className='flex flex-col gap-2'>
+    <button disabled={cart.length === 0} className='w-full h-[40px] flex items-center justify-center bg-gray-300 text-white'>Checkout</button>
+    <Link to='/pages/cartpage'>
+    <button disabled={cart.length === 0} className='w-full h-[40px] flex items-center justify-center bg-gray-300 text-blue-500'>View cart</button></Link>
+
+</div>
          </>
         ) : (
             <>
@@ -55,9 +63,12 @@ setUniquecart(newarray)
     <div className='text-xl font-bold'>Your cart is empty</div>
     <div className='text-sm font-semibold'>Time to start shopping!</div>
 </div>
+
 <div className='flex flex-col gap-2'>
     <button disabled={cart.length === 0} className='w-full h-[40px] flex items-center justify-center bg-gray-300 text-white'>Checkout</button>
-    <button disabled={cart.length === 0} className='w-full h-[40px] flex items-center justify-center bg-gray-300 text-blue-500'>View cart</button>
+    <Link to='/pages/cartpage'>
+    <button disabled={cart.length === 0} className='w-full h-[40px] flex items-center justify-center bg-gray-300 text-blue-500'>View cart</button></Link>
+
 </div>
 </>
 )}
