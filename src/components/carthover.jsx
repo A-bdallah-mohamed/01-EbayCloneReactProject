@@ -45,7 +45,7 @@ setcart(newcartarray)
      
             <div className='absolute bottom-[120px] w-full bg-slate-100 left-0 px-5 h-[40px] flex items-center border-2 border-gray-300 text-xl justify-between'>
                 <div className='font-semibold'>Total</div>
-                <div className='text-[18px] font-bold px-2'>$USD {totalprice}</div>
+                <div className='text-[18px] font-bold px-2'>$ {totalprice}</div>
                 </div>
             
          </div>

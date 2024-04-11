@@ -12,7 +12,7 @@ const newlength = Uniquecart.length
 setcartlength(newlength)
   },[Uniquecart])
 let totalprice = 0 
-Uniquecart.forEach(p => {p.price += 0 ; 
+Uniquecart.forEach(p => { 
   totalprice += p.price})
   
  
