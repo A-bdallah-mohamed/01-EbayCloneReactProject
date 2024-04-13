@@ -4,17 +4,13 @@ import whitelogo from '../assets/whitebglogo.PNG'
 import { IoIosArrowDown } from "react-icons/io";
 import { IoSearchOutline } from "react-icons/io5";
 import { Link } from 'react-router-dom';
-
 export default function Search() {
-
 const [searchtext,setsearchtext] = useState("")
 const handlesearch = (e) => {
   setsearchtext(e.target.value)
-  console.log(searchtext)
 }
 useEffect(() => {
   const handleKeyPress = (event) => {
-
     if (event.key === 'Enter') {
       document.getElementById('myButton').click();
     }
@@ -28,7 +24,8 @@ useEffect(() => {
     <>
 <div className='border'></div>
    <div className='searchbar'>
-    <Link to="/">
+
+      <Link to=''>
 <img src={whitelogo} className='logo'></img>
 </Link>
 <div className='shopbycaate'>

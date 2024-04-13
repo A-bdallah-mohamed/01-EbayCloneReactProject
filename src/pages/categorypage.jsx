@@ -14,13 +14,10 @@ export default function Categorypage() {
   const uniqueCategories = [...new Set(products.map(product => product.category))];
   const { category } = useParams();
   const [productscategory,setproductscategory] = useState();
-
   useEffect(() => {
 const catprod = products.filter(p => p.category === category) 
 setproductscategory(catprod)
-
   },[products,category])
-
 useEffect(() => {
   window.scrollTo({
     top: 0,
@@ -31,21 +28,15 @@ const scrolltotop = () => {
   window.scrollTo({
     top: 0,
     behavior: 'smooth' 
-  });
-}
+  });}
   return (
     <>
     <div className='w-full flex-col flex justify-center items-center'>
     <div className='contentwidth'>
     <Loginbar />
        <Search />
-
        <div className='text-6xl font-semibold ml-1 mt-[20px] mb-9'>{category}</div>
-
-
        <div className='flex'>
-{/*start of (shop by category)*/}
-
 <div className='flex flex-col  mr-[50px] w-[250px]'>
   <div className='font-semibold text-xl mb-5'> Shop by Category</div>
   <div className='flex flex-col gap-1 ml-2'>
@@ -56,10 +47,6 @@ const scrolltotop = () => {
     ))}
   </div>
 </div>
-
-{/*end of (shop by category)*/}
-
-
 <div className='flex flex-col'>
 <div className='text-xl font-semibold ml-2 mb-5'>All listings</div>
 <div className='flex flex-wrap gap-[25px] mb-[25px]'>
@@ -80,16 +67,9 @@ const scrolltotop = () => {
 )) ) : (<div>Loading ...</div>)}
 </div>
 </div>
-
        </div>
-
-
     </div>
-  
     </div>
     <div className='h-[400px] bg-gray-100 w-[full] border-t-2 border-gray-400 flex items-center justify-center'>
     <Footer />
-    </div>
-    </>
-  )
-}
+    </div></>)}

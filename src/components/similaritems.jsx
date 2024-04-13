@@ -7,27 +7,17 @@ import { Link } from 'react-router-dom';
 export default function Similaritems({product}) {
     const [similars,setsimilars] = useState([])
   const scrolldiv = useRef(null);
-
   const {products} = useProductscontext();
-
 useEffect(() => {
     const similaritems = products.filter(p => p.brand === product.brand || p.category === product.category) 
 setsimilars(similaritems)
-
 },[product])
-
-
-  
     const topeightproducts = products.slice(0,9)
-
-
     const scrollleft = () =>{
       if(scrolldiv.current) {
         scrolldiv.current.scrollLeft  -= 1050;
       }
     }
-
-    
     const scrollright = () =>{
       if(scrolldiv.current) {
         scrolldiv.current.scrollLeft += 1050;
@@ -47,11 +37,7 @@ setsimilars(similaritems)
         <div className='text-xl font-semibold text-slate-500'>Sponsered</div>
     </div>
 <div className='todaysdealss' ref={scrolldiv}>
-   
-  
 <button className='arrow-left' onClick={scrollleft}><RiArrowLeftSLine /></button>
-
-
 {similars.map((product,id) => (
       <Link to={`/pages/Productpage/${product.id}`}key={id} onClick={()=>scrolltotop()}>
   <div className='maindealcontainer cursor-pointer'>
@@ -67,9 +53,7 @@ setsimilars(similaritems)
   </div>
   </Link>
 ))}
-
 <button className='arrow-right' onClick={scrollright}><MdOutlineKeyboardArrowRight /></button>
-
 </div>
 </div>
 </>

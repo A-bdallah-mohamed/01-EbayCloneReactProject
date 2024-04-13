@@ -5,7 +5,6 @@ import Search from './search'
 import Categorybar from './categorybar'
 export default function Header() {
   return (
-
 <div>
         <Loginbar />
 <Search />

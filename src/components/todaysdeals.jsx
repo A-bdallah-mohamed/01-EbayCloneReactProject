@@ -6,18 +6,13 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { Link } from 'react-router-dom';
 export default function Todaysdeals() {
   const scrolldiv = useRef(null);
-
     const {products} = useProductscontext();
     const topeightproducts = products.slice(0,9)
-
-
     const scrollleft = () =>{
       if(scrolldiv.current) {
         scrolldiv.current.scrollLeft  -= 1050;
       }
     }
-
-    
     const scrollright = () =>{
       if(scrolldiv.current) {
         scrolldiv.current.scrollLeft += 1050;
@@ -25,12 +20,8 @@ export default function Todaysdeals() {
     }
   return (
     <>
-
 <div className='todaysdeals' ref={scrolldiv}>
-   
-  
 <button className='arrow-left' onClick={scrollleft}><RiArrowLeftSLine /></button>
-
 <div className='maindealcontainer left-0'>
 <div className='maindeal'>
 <div className='text-white text-3xl font-semibold'>Today's Deals</div>
@@ -54,11 +45,8 @@ export default function Todaysdeals() {
   </div>
   </Link>
 ))}
-
 <button className='arrow-right' onClick={scrollright}><MdOutlineKeyboardArrowRight /></button>
-
 </div>
-
 </>
   )
 }

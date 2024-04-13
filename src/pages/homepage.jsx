@@ -22,7 +22,6 @@ export default function Homepage() {
     <Todaysdeals   />
     <Luxdeals />
     </div>
-  
     </div>
     <div className='h-[400px] bg-gray-100 w-[full] border-t-2 border-gray-400 flex items-center justify-center'>
     <Footer />

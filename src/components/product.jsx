@@ -6,46 +6,36 @@ import { useCartContext } from './cartprovider';
 export default function Product({product}) {
   const {cart,setcart,cartlength,Uniquecart,setUniquecart} = useCartContext()
     const  [stars,setstars] = useState([])
-  
+
     useEffect(() => {
         if (product?.rating) { 
           const fullStars = Math.floor(product.rating);
           const starElements = [];
-      
           for (let i = 0; i < fullStars; i++) {
             starElements.push(<span key={i}>&#9733;</span>);
           }
-      
           if (product.rating % 1 !== 0) {
             starElements.push(<span key="half">&#9734;</span>);
           }
-      
           const remainingStars = 5 - Math.ceil(product.rating);
           for (let i = 0; i < remainingStars; i++) {
             starElements.push(<span key={`empty${i}`}>&#9734;</span>);
           }
-      
           setstars(starElements);
         }
       }, [product]);
-      
-
-
-
 const [productimages,setproductimages] = useState([])
 const [mainimg,setmainimg] = useState()
 const [hovoredimg,sethovoredimg] = useState();
 useEffect(() => {
 if(product && product.images){
  setproductimages(product.images)
-
 setmainimg(product.thumbnail)
  }
 },[product])
 
 const handlemouseenter = (img) => {
     sethovoredimg(img)
-
 }
 const handlemouseleave = () => {
 sethovoredimg(null)
@@ -53,24 +43,15 @@ sethovoredimg(null)
 const setnewimg = (img) => {
     setmainimg(img)
 }
-
 const addtocart = (p) => {
-  const newarray = [...cart, p]; // Spread the existing cart items and add the new product
-  setcart(newarray); // Update the cart state with the new array
-  console.log(newarray); // Log the updated cart array
-  console.log('unuique is is : ',Uniquecart)
-  console.log(cartlength)
+  const newarray = [...cart, p];
+  setcart(newarray); 
 }
-
   return (  
       <div className='w-full flex-col flex justify-center items-center'>
   <div className='contentwidth'>
     <div className='flex w-full mt-[30px]'>
-
-{/*---------------1-----------------*/}
-
 <div className='flex'>
-
  <div className='max-h-[450px] overflow-y-auto hide-scrollbar'>
     {productimages.length > 0 ? (
         <div className='flex flex-col gap-[20px] w-[110px] items-center justify-center py-[5px]'>
@@ -86,21 +67,12 @@ const addtocart = (p) => {
  <div>
   <div className='ml-[15px] h-[450px] overflow-hidden w-[600px] bg-slate-100 flex items-center justify-center rounded-2xl'>
     {mainimg ?
-     (
-         hovoredimg ? (<img className='w-auto max-h-full ' src={hovoredimg}></img>) : (<img className='w-auto max-h-full ' src={mainimg}></img>)
-
-         ) 
-     : 
+     (hovoredimg ? (<img className='w-auto max-h-full ' src={hovoredimg}></img>) : (<img className='w-auto max-h-full ' src={mainimg}></img>)) : 
      (<div>Loading ...</div>)
     }
-   
   </div>
 </div>
-
-
 </div>
-
-{/*---------------/1-------2----------*/}
 <div className='ml-[15px] flex flex-col gap-[20px]'>
     {product ? (
     <><div className=' font-bold text-3xl'>
@@ -117,15 +89,9 @@ const addtocart = (p) => {
     >Add to cart</button>
     <button className='w-full h-[50px] rounded-full border-2 border-blue-800 text-whiet font-bold text-blue-800  flex items-center justify-center'><CiHeart />Add to watchlist</button>
 </div></>) : (<div>Loading data...</div>)}
-
-
 </div>
-
-{/*----------------/2----------------*/}
 </div>
-
   </div>
-  
   </div>
   )
 }

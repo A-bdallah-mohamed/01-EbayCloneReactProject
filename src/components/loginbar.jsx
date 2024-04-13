@@ -10,7 +10,6 @@ import { useLocation } from 'react-router-dom';
 import { useCartContext } from './cartprovider';
 export default function Loginbar() {
   const {cartlength,setcartlength,Uniquecart} = useCartContext()
-
   const location = useLocation()
   const [hovered,sethovered] = useState(false)
   useEffect(() => {
@@ -22,7 +21,7 @@ sethovered(false)
     <>
 <div className=' loginbar smallfont'>
 <div className='flexconetnt '>
-   <div>Hi! <span>Sign in </span>or <span>register</span></div><div>Daily deals</div><div>Help & Contact</div>
+   <div>Hi!     <Link to="/pages/signinpage"><span>Sign in </span></Link>or <span>register</span></div><div>Daily deals</div><div>Help & Contact</div>
 </div>
 <div className='flexconetnt'>
    <div>Ship to</div><div>Sell</div>

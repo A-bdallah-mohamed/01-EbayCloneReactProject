@@ -10,13 +10,9 @@ export default function Productpage() {
 const [product ,setproduct] = useState();
 const { products } = useProductscontext();
     const { id } = useParams();
-
 useEffect(() => {
     setproduct(products.find(p => p.id === parseInt(id)))
-  
 },[products, id])
-
-
   return (
     <>
     <div className='w-full flex-col flex justify-center items-center'>
@@ -25,9 +21,7 @@ useEffect(() => {
 <Search />
 {product && <Product  product={product}/> }
 {product && <Similaritems product={product}/>}
-
 </div>
-
 </div>
 <div className='h-[400px] bg-gray-100 w-[full] border-t-2 border-gray-400 flex items-center justify-center'>
     <Footer />
