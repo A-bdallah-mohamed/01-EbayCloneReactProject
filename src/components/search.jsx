@@ -25,7 +25,7 @@ useEffect(() => {
 <div className='border'></div>
    <div className='searchbar'>
 
-      <Link to=''>
+      <Link to='/'>
 <img src={whitelogo} className='logo'></img>
 </Link>
 <div className='shopbycaate'>
